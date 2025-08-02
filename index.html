@@ -57,6 +57,52 @@
       color: var(--accent-color) !important;
     }
 
+    .navbar-nav .nav-link.active {
+      color: var(--accent-color) !important;
+    }
+
+    /* Mobile Navigation */
+    .navbar-toggler {
+      border: none;
+      padding: 0.25rem 0.5rem;
+      background: transparent;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28226, 232, 240, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    .navbar-collapse {
+      background-color: rgba(15, 23, 42, 0.98);
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .navbar-nav .nav-link {
+        margin: 0.5rem 0;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover {
+        background-color: rgba(59, 130, 246, 0.1);
+      }
+    }
+
     /* Hero Section */
     .hero {
       min-height: 100vh;
@@ -305,7 +351,7 @@
       <a class="navbar-brand" href="#home">
         <i class="fas fa-brain me-2"></i>Athena
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -826,6 +872,13 @@
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
+          // Close mobile menu if open
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          const navbarToggler = document.querySelector('.navbar-toggler');
+          if (navbarCollapse.classList.contains('show')) {
+            navbarToggler.click();
+          }
+
           const offsetTop = target.offsetTop - 80; // Account for fixed navbar
           window.scrollTo({
             top: offsetTop,
