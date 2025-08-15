@@ -9,7 +9,7 @@ This repository contains the main website for Athena.live, showcasing our servic
 - **Modern, responsive design** built with Bootstrap 5
 - **Interactive sections** highlighting our technology services
 - **Athena GPT integration** - our specialized AI assistant
-- **$ATHENA token information** and community links
+- **Community links** and social media integration
 - **Social media integration** with YouTube, Reddit, and Twitter
 - **Contact forms** and project inquiry functionality
 
@@ -29,8 +29,7 @@ Athena Technologies empowers businesses through cutting-edge information technol
 ### 🤖 Athena GPT
 Experience our specialized AI assistant designed for technology consulting, software development guidance, and automation solutions.
 
-### 💰 $ATHENA Token
-Join our ecosystem with the $ATHENA token, representing ownership in the future of AI-powered technology solutions.
+
 
 ### 📺 Community & Content
 - **YouTube Channel**: [@athena_live](https://www.youtube.com/@athena_live) - Tutorials, insights, and tech content
